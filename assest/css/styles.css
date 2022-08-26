@@ -1,6 +1,6 @@
 /*=============== GOOGLE FONTS ===============*/
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 /*=============== VARIABLES CSS ===============*/
 :root {
   --header-height: 3.5rem;
@@ -251,8 +251,9 @@ body.light-theme
 
 .nav__logo
 {
+  font-family: 'Cookie', cursive;
   color: var(--first-color);
-  font-weight: var(--font-medium);
+  font-weight: var(--h1-font-size);
   transition: .4s;
 }
 
@@ -309,6 +310,127 @@ body.light-theme
 
 }
 
+/* START LANDING */
+.landing {
+  position: relative;
+}
+
+/* .landing::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 145px;
+  background-color: black;
+  z-index: -1;
+  border-radius: 1rem;
+  transform: skewY(-6deg);
+  transform-origin: top left;
+} */
+
+.landing img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 50px;
+  transform: skewY(-1deg);
+  transform-origin: top left;
+}
+.landing .container {
+  min-height: calc(100vh - 100px);
+  display: flex;
+  align-items: center;
+  padding-bottom: 120px;
+}
+
+.landing .text {
+  flex: 1;
+}
+@media (max-width: 991px) {
+  .landing .text {
+      text-align: center;
+  }
+}
+
+.landing .text h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: -2px;
+  font-family: 'Reem Kufi', sans-serif;
+}
+@media (max-width: 767px) {
+  .landing .text h1 {
+      font-size: 22px;
+      padding-top: 40px
+  }
+}
+
+.landing .text p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 5px 0 0;
+  color:var(--main-color);
+  max-width: 500px;
+
+}
+@media (max-width: 991px) {
+  .landing .text p {
+      margin: 10px auto;
+  }
+}
+@media (max-width: 767px) {
+  .landing .text p {
+      font-size: 14px;
+  }
+}
+
+.landing .image img {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  animation: up-and-down 5s linear infinite;
+}
+@media (max-width: 991px) {
+  .landing .image {
+      display: none;
+  }
+}
+
+.landing .go-down {
+  color: var(--main-color);
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translatex(-50%);
+  transition: 0.4s;
+}
+
+.landing .go-down:hover {
+  color: black;
+}
+
+.landing .go-down i {
+  animation: bouncing 1.5s infinite;
+}
+
+@media (max-width: 767px) {
+  .landing::before{
+      height: 85%;
+  }
+  .landing .container{
+      min-height: calc(50vh - 100px);
+  }
+  .landing{
+      min-height: 300px;
+      max-height: 300px;
+  }
+  
+}
+/* END LANDING */
 /*=============== HOME ===============*/
 .home__container
 {
@@ -325,7 +447,7 @@ body.light-theme
 .home__greeting,
 .home__education
 {
-  font-size: var(--small-font-size);
+  font-size: var(--h2-font-size);
   font-weight: var(--font-medium);
 }
 
@@ -348,8 +470,10 @@ body.light-theme
 
 .home__img
 {
-  width: 350px;
-  height: 230px;
+  width: 400px;
+  height: 250px;
+  object-fit: cover;
+  transform: translateX(-9px);
 }
 
 .home__handel
@@ -469,7 +593,7 @@ body.light-theme
 
 .about__img
 {
-  width: 220px;
+  width: 250px;
   border-radius: 1.5rem;
   justify-self: center;
 }
@@ -499,6 +623,7 @@ body.light-theme
   font-size: 1.5rem;
   counter-reset: var(--first-color);
   margin-bottom: .5rem;
+  color: var(--first-color);
 }
 
 .about__title
@@ -515,6 +640,7 @@ body.light-theme
 {
   margin-bottom: 2rem;
   text-align: justify;
+  text-justify: inter-word;
 }
 
 
@@ -966,6 +1092,7 @@ body.light-theme
 .footer__title{
   text-align: center;
   margin-bottom: 2rem;
+  font-family: 'Cookie', cursive;
 }
 
 .footer__list
@@ -1066,6 +1193,11 @@ body.light-theme
     column-gap: .25rem;
   }
 
+  .home__greeting
+  {
+    font-size: medium;
+  }
+
 }
 
 /* For medium devices */
@@ -1127,6 +1259,9 @@ body.light-theme
     margin: 0 auto;
   }
 
+  .home__greeting{
+    font-size: larger;
+  }
 }
 
 
